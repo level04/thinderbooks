@@ -16,5 +16,34 @@ ENTRADA: Backlog
 METODO: Reunião 
 SAÍDA: Documento de Elicitação de Requisitos 
 
+4 - Criar Estórias de Usuário
+DESCRIÇAO:  
+ENTRADA:  
+METODO:  
+SAÍDA:  
+
+5 - Fazer planning poker  
+DESCRIÇAO:  
+ENTRADA:  
+METODO:  
+SAÍDA:  
+
+6 - Escrever Casos de Teste (unitário e de integração)
+DESCRIÇAO:  
+ENTRADA:  
+METODO:  
+SAÍDA:  
+
+7 - Codificar
+DESCRIÇAO:  
+ENTRADA:  
+METODO:  
+SAÍDA:  
+
+8 - Teste
+DESCRIÇAO:  
+ENTRADA:  
+METODO:  
+SAÍDA: 
 
 FERRAMENTAS: GitHub, Trello, Draw.io
