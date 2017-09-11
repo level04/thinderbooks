@@ -11,22 +11,22 @@ METODO: Reunião
 SAÍDA: Backlog  
 
 3. Definir Backlog da Sprint  
-DESCRIÇAO:   
-ENTRADA: Backlog  
+DESCRIÇAO: Priorizar e selecionar as funcionalidades a serem desenvolvidas nesta sprint.  
+ENTRADA: Backlog do Produto 
 METODO: Reunião   
-SAÍDA: Documento de Elicitação de Requisitos 
+SAÍDA: Backlog da Sprint 
 
 4. Criar Estórias de Usuário  
-DESCRIÇAO:  
-ENTRADA:  
-METODO:  
-SAÍDA:  
+DESCRIÇAO: Definir as estórias de usuário para cada funcionalidade selecionada para a sprint.  
+ENTRADA: Backlog da Sprint.  
+METODO: Reunião.  
+SAÍDA: Estórias de usuário.  
 
 5. Fazer planning poker  
-DESCRIÇAO:  
-ENTRADA:  
-METODO:  
-SAÍDA:  
+DESCRIÇAO: Estimar esforço gasto em cada item da sprint backlog através do planning poker.  
+ENTRADA: sprint backlog.  
+METODO: Planning Poker.  
+SAÍDA: Estimativas de backlog da sprint.  
 
 6. Escrever Casos de Teste (unitário e de integração)  
 DESCRIÇAO: Com base nas informações obtidas até agora (estórias de usuário, por exemplo), escrever os casos de teste que orientarão a equipe durante o desenvolvimento (TDD - Desenvolvimento Orientado a Testes, em protuguês).  
@@ -54,10 +54,10 @@ SAÍDA: Código fonte (ou trecho) reparado
 
 
 10. Finalizar Sprint  
-DESCRIÇAO:  
-ENTRADA:  
-METODO:  
-SAÍDA: 
+DESCRIÇAO: Revisar funcionalidades desenvolvidas, testar funcionalidades, preparar atividades para inspeção da sprint.  
+ENTRADA: Sprint Backlog.  
+METODO: Execução de funcionalidades e comportamento do software.  
+SAÍDA: Erros ou falhas de funcionalidades.  
 
 12. Inspecionar Sprint  
 DESCRIÇAO: Responder as perguntas - Todos da equipe estão comprometidos? Faltou participação de alguém do time? Do Product Owner? Do ScrumMaster? As ferramentas são adequadas? As reuniões foram adequadas? O processo Scrum está andando bem? 
