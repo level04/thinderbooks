@@ -16,77 +16,70 @@ ENTRADA: Backlog do Produto
 METODO: Reunião   
 SAÍDA: Backlog da Sprint 
 
-4. Criar Estórias de Usuário  
+4. Definir Prioridades das Demandas do Backlog
+DESCRIÇAO: Definir quais atividades devem ser priorizadas em relação as outras
+ENTRADA: Baklog da Sprint
+METODO: Reunião
+SAÍDA: Backlog da Sprint(priorizado)
+
+5. Criar Estórias de Usuário  
 DESCRIÇAO: Definir as estórias de usuário para cada funcionalidade selecionada para a sprint.  
 ENTRADA: Backlog da Sprint.  
 METODO: Reunião.  
 SAÍDA: Estórias de usuário.  
 
-5. Fazer planning poker  
+6. Fazer planning poker  
 DESCRIÇAO: Estimar esforço gasto em cada item da sprint backlog através do planning poker.  
 ENTRADA: sprint backlog.  
 METODO: Planning Poker.  
 SAÍDA: Estimativas de backlog da sprint.  
 
-6. Escrever Casos de Teste (unitário e de integração)  
+7. Codificar Casos de Teste para demanda(unitário e de integração)  
 DESCRIÇAO: Com base nas informações obtidas até agora (estórias de usuário, por exemplo), escrever os casos de teste que orientarão a equipe durante o desenvolvimento (TDD - Desenvolvimento Orientado a Testes, em protuguês).  
 ENTRADA: Estória de Usuário, Definição do Escopo, Backlog da Sprint  
 METODO: Análise  
 SAÍDA: Testes Unitários e de Integração (codificados)  
 
-7. Codificar  
+8. Implementar Demanda
 DESCRIÇAO: Construir/desenvolver o software.  
 ENTRADA: Casos de Teste, Backlog da Sprint, Estória de Usuário   
 METODO: Programação em pares  
 SAÍDA: Código fonte contendo as funcionalidades especificadas no Sprint Backlog  
 
-8. Testes    
+9. Realizar Testes automatizados   
 DESCRIÇAO: Aplicar os testes desenvolvidos, a fim de assegurar a qualidade do software desenvolvido.  
 ENTRADA: Casos de Teste, Código Fonte, Backlog da Sprint  
 METODO: Auditoria  
 SAÍDA: Veredito da Auditoria  
 
-9. Correção  
-DESCRIÇAO: Recodificação de funcionalidades reprovadas durante os testes.  
-ENTRADA: Veredito da Auditoria, Código Fonte, Backlog da Sprint   
-METODO: Programação em Pares  
-SAÍDA: Código fonte (ou trecho) reparado  
+10. Validar Backlog da Sprint
+DESCRIÇAO: Verificar se todas as demandar da sprint foram realizadas
+ENTRADA: Backlog da Sprint, Código gerado
+METODO: Análise
+SAÍDA: Backlog da Sprint (somente com demandas não atendidas)
 
+11. Incluir Funcionalidades Restantes no Próximo Backlog
+DESCRIÇAO: Incluir funcionaçidades não realizadar no backlog da próxima sprint
+ENTRADA: Backlog das Duas Sprints
+METODO: Reunião
+SAÍDA: Backlog da Próxima Sprint
 
-10. Finalizar Sprint  
-DESCRIÇAO: Revisar funcionalidades desenvolvidas, testar funcionalidades, preparar atividades para inspeção da sprint.  
-ENTRADA: Sprint Backlog.  
-METODO: Execução de funcionalidades e comportamento do software.  
-SAÍDA: Erros ou falhas de funcionalidades.  
+12. Homologar entrega
+DESCRIÇAO: Realizar entrega do produto produzido durante a Sprint
+ENTRADA: Produto codificado
+METODO: Reunião com o cliente
+SAÍDA: Relatório de Reunião
 
-12. Inspecionar Sprint  
+13. Inspecionar Sprint  
 DESCRIÇAO: Responder as perguntas - Todos da equipe estão comprometidos? Faltou participação de alguém do time? Do Product Owner? Do ScrumMaster? As ferramentas são adequadas? As reuniões foram adequadas? O processo Scrum está andando bem? 
 ENTRADA: Sprint finalizada   
 METODO: Reunião  
 SAÍDA: Exposição de ideias verbais  
 
-13. Identificação de melhorias  
+14. Identificação de melhorias  
 DESCRIÇAO: Identificar e ordenar os principais itens que foram bem e as potenciais melhorias.  
 ENTRADA: Relatório de inspeção de sprint  
 METODO: Post its coloridos colados com expressão dos membros   
 SAÍDA: Relatório de inspeção de sprint  
-
-14. Demonstrar funcionalidades desenvolvidas  
-DESCRIÇÃO: Apresentar os resultados obtidos na última sprint  
-ENTRADA: Retrospectiva da Sprint finalizada  
-MÉTODO: Palestra  
-SAÍDA: Exposição de resultados obtidos  
-
-15. Obter feedbacks  
-DESCRIÇÃO: Receber e avaliar o feedback dos 
-ENTRADA: Disponibilizar questionãrio avaliando as funcionalidades apresentadas anteriormente  
-MÉTODO: Questionário  
-SAÍDA: Questionários respondidos  
-
-16. Avaliar objetivos da Sprint  
-DESCRIÇÃO: Avaliar e devolver retornos das respontas dos questionários  
-ENTRADA: Questionários respondidos  
-MÉTODO: Reunião 
-SAÍDA: Questionários avaliados  
 
 FERRAMENTAS: GitHub, Trello, Draw.io  
