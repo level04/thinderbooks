@@ -16,11 +16,11 @@ ENTRADA: Backlog do Produto
 METODO: Reunião   
 SAÍDA: Backlog da Sprint 
 
-4. Definir Prioridades das Demandas do Backlog
-DESCRIÇAO: Definir quais atividades devem ser priorizadas em relação as outras
-ENTRADA: Baklog da Sprint
-METODO: Reunião
-SAÍDA: Backlog da Sprint(priorizado)
+4. Definir Prioridades das Demandas do Backlog  
+DESCRIÇAO: Definir quais atividades devem ser priorizadas em relação as outras  
+ENTRADA: Baklog da Sprint  
+METODO: Reunião  
+SAÍDA: Backlog da Sprint(priorizado)  
 
 5. Criar Estórias de Usuário  
 DESCRIÇAO: Definir as estórias de usuário para cada funcionalidade selecionada para a sprint.  
@@ -40,7 +40,7 @@ ENTRADA: Estória de Usuário, Definição do Escopo, Backlog da Sprint
 METODO: Análise  
 SAÍDA: Testes Unitários e de Integração (codificados)  
 
-8. Implementar Demanda
+8. Implementar Demanda  
 DESCRIÇAO: Construir/desenvolver o software.  
 ENTRADA: Casos de Teste, Backlog da Sprint, Estória de Usuário   
 METODO: Programação em pares  
@@ -52,23 +52,23 @@ ENTRADA: Casos de Teste, Código Fonte, Backlog da Sprint
 METODO: Auditoria  
 SAÍDA: Veredito da Auditoria  
 
-10. Validar Backlog da Sprint
-DESCRIÇAO: Verificar se todas as demandar da sprint foram realizadas
-ENTRADA: Backlog da Sprint, Código gerado
-METODO: Análise
-SAÍDA: Backlog da Sprint (somente com demandas não atendidas)
+10. Validar Backlog da Sprint  
+DESCRIÇAO: Verificar se todas as demandar da sprint foram realizadas  
+ENTRADA: Backlog da Sprint, Código gerado  
+METODO: Análise  
+SAÍDA: Backlog da Sprint (somente com demandas não atendidas)  
 
-11. Incluir Funcionalidades Restantes no Próximo Backlog
-DESCRIÇAO: Incluir funcionaçidades não realizadar no backlog da próxima sprint
-ENTRADA: Backlog das Duas Sprints
-METODO: Reunião
-SAÍDA: Backlog da Próxima Sprint
+11. Incluir Funcionalidades Restantes no Próximo Backlog  
+DESCRIÇAO: Incluir funcionaçidades não realizadar no backlog da próxima sprint  
+ENTRADA: Backlog das Duas Sprints  
+METODO: Reunião  
+SAÍDA: Backlog da Próxima Sprint  
 
-12. Homologar entrega
-DESCRIÇAO: Realizar entrega do produto produzido durante a Sprint
-ENTRADA: Produto codificado
-METODO: Reunião com o cliente
-SAÍDA: Relatório de Reunião
+12. Homologar entrega  
+DESCRIÇAO: Realizar entrega do produto produzido durante a Sprint  
+ENTRADA: Produto codificado  
+METODO: Reunião com o cliente  
+SAÍDA: Relatório de Reunião  
 
 13. Inspecionar Sprint  
 DESCRIÇAO: Responder as perguntas - Todos da equipe estão comprometidos? Faltou participação de alguém do time? Do Product Owner? Do ScrumMaster? As ferramentas são adequadas? As reuniões foram adequadas? O processo Scrum está andando bem? 
