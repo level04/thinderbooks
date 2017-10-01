@@ -12,7 +12,7 @@
 - US006: **SENDO** usuário **DESEJO** escolher quantos livros de minha coleção trocar e por quantos/quais de outro usuário tenho interesse **PARA** poder fazer múltiplas trocas.  
 - US007: **SENDO** usuário **DESEJO** mudar o status de um livro de "disponível" para "indisponível" **PARA** quando não quiser trocar um livro de minha coleção.  
 - US008: **SENDO** usuário **DESEJO** ter acesso rápido às configurações do aplicativo **PARA** agilizar alterações.  
-- US009: **SENDO** usuário **DESEJO** visualizar minha coleção atual (incluindo os livros que recebi de outros usuários) **PARA** ter maior controle da minha biblioteca.  
+- US009: **SENDO** usuário **DESEJO** visualizar e filtrar minha coleção atual (incluindo os livros que recebi de outros usuários) **PARA** ter maior controle da minha biblioteca.  
 - US010: **SENDO** usuário **DESEJO** modificar meus dados cadastrais **PARA** mantê-los atualizados.
 - US011: **SENDO** usuário **DESEJO** avaliar as trocas realizadas **PARA** ser avisado caso algum usuário tenha histórico ruim (trocas não concluídas).  
 - US012: **SENDO** usuário **DESEJO** seguir outros usuários **PARA** ter acesso rápido às suas bibliotecas.  
@@ -143,22 +143,55 @@ solicitado (ver especificação no trello)
 </code></pre>
 
 ### Correspondência
+``` Legenda: (*) - atividade pertencente a 2 Estórias de Usuário ```  
+
 - **US001**
   - ATV001
   - ATV002
   - ATV003
   - ATV004
 - **US002**
+  - ATV005
+  - ATV006
 - **US003**
+  - ATV007
+  - ATV008
+  - ATV009
 - **US004**
+  - ATV002 (\*)
 - **US005**
+  - ATV010
+  - ATV011
+  - ATV012
+  - ATV013
 - **US006**
+  - ATV014
+  - ATV015
+  - ATV016
+  - ATV017
 - **US007**
+  - ATV018
+  - ATV019
 - **US008**
+  - ATV020
+  - ATV021
 - **US009**
+  - ATV022
 - **US010**
+  - ATV023
 - **US011**
+  - ATV024
+  - ATV025
 - **US012**
+  - ATV026
+  - ATV027
+  - ATV028
 - **US013**
+  - ATV029
+  - ATV030
 - **US014**
+  - ATV031
+  - ATV032
+  - ATV033
 - **US015**
+  - ATV034
