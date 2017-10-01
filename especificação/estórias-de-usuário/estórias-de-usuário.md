@@ -1,4 +1,4 @@
-![](https://avatars0.githubusercontent.com/u/31450944?v=4&s=200)  
+![](http://ap.imagensbrasil.org/images/2017/10/01/bg-thinderbooks.png)  
 # ThinderBooks - Level 4  
 ## Estórias de Usuário  
 ### Modelo:  
