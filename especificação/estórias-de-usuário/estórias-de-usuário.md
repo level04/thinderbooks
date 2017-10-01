@@ -102,9 +102,7 @@ solicitado (ver especificação no trello)
 - **ATV034**: recuperação de senha
 
 ### Esforço Estipulado (do maior para o menor)
-- **Indispensável**:  
-<pre><code>
-- Relevantes:
+<pre><code>- Relevantes:
 01. ATV005 ................................ 20
 02. ATV010 ................................ 20
 03. ATV014 ................................ 20
