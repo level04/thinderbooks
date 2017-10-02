@@ -42,7 +42,7 @@ COD.      | 4 | 3 | 2 | 1
 **US015** | | | | ✓
 
 ### Rastreabilidade (monodirecional)  
-``` Como se lê: US001 depende de US008, US009 e US012 ```   
+``` Como se lê: US007 depende de US001, US004 e US009 ```   
 
 COD.  | US001 | US002 | US003 | US004 | US005 | US006 | US007 | US008 | US009 | US010 | US012 | US013 | US014 | US015 |
 ----: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
