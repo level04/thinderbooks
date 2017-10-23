@@ -1,0 +1,110 @@
+<div class="container">
+    <h1 class="text-center">Cadastro de Usuário</h1>
+    
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+    
+    <form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)" >
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Nome</label>
+                <input 
+                    formControlName="nome" 
+                    name="nome" 
+                    [(ngModel)]="usuario.nome" 
+                    class="form-control"  
+                    autocomplete="off"
+                    placeholder="Nome">
+                <div *ngIf="meuForm.controls.nome.invalid">
+                    <span *ngIf="meuForm.controls.nome.errors.required" class="form-control alert-danger">
+                        Nome obrigatório
+                    </span>                    
+                </div>                        
+            </div>
+            <div class="form-group">
+                <label>Sobrenome</label>
+                <input
+                    formControlName="sobrenome"  
+                    name="sobrenome" 
+                    [(ngModel)]="usuario.sobrenome" 
+                    class="form-control"  
+                    autocomplete="off"
+                    placeholder="Sobrenome completo">
+                <span *ngIf="meuForm.controls.sobrenome.invalid" class="form-control alert-danger">
+                    Sobrenome obrigatório
+                </span>                       
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input 
+                    formControlName="email" 
+                    name="email" 
+                    [(ngModel)]="usuario.email"  
+                    class="form-control" 
+                    autocomplete="off"
+                    placeholder="E-mail"
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
+                <div *ngIf="meuForm.controls.email.invalid">
+                    <span *ngIf="meuForm.controls.email.errors.required" class="form-control alert-danger">
+                        E-mail obrigatório
+                    </span> 
+                    <span *ngIf="meuForm.controls.email.errors.pattern" class="form-control alert-danger">
+                        E-mail inválido
+                    </span>                    
+                </div> 
+            </div>
+            <div class="form-group">
+                <label>Data de Nascimento</label>
+                <input 
+                    formControlName="dataNascimento" 
+                    name="dataNascimento" 
+                    [(ngModel)]="usuario.dataNascimento"  
+                    class="form-control" 
+                    autocomplete="off"
+                    placeholder="Data de nascimento no formato dd/mm/aaaa">
+                <span *ngIf="meuForm.controls.dataNascimento.invalid" class="form-control alert-danger">
+                    Data de Nascimento obrigatória
+                </span> 
+            </div>
+
+            <div class="form-group">
+                <label>Senha</label>
+                <input 
+                    formControlName="senha" 
+                    name="senha" 
+                    [(ngModel)]="usuario.senha"  
+                    class="form-control" 
+                    autocomplete="off"
+                    placeholder="Senha">
+                    <div *ngIf="meuForm.controls.senha.invalid">
+                        <span *ngIf="meuForm.controls.senha.errors.required" class="form-control alert-danger">
+                            Senha obrigatória
+                        </span> 
+                        <span *ngIf="meuForm.controls.senha.errors.minlength" class="form-control alert-danger">
+                            Senha deve ter no mínimo 4 caracteres
+                        </span>                    
+                    </div> 
+            </div>
+
+            <div class="form-group">
+                <label>Confirmação de Senha</label>
+                <input 
+                    formControlName="confirmaSenha" 
+                    name="confirmaSenha" 
+                    [(ngModel)]="usuario.confirmaSenha"  
+                    class="form-control" 
+                    autocomplete="off"
+                    placeholder="Confirmação de senha">
+                        <span *ngIf="meuForm.controls.confirmaSenha.errors?.MatchPassword" class="form-control alert-danger">
+                            Senha incompatível, por favor, inserir a mesma senha preenchida no campo 'Senha'
+                        </span> 
+            </div>
+
+            <botao nome="Salvar" estilo="btn-primary" tipo="submit" [desabilitado]="meuForm.invalid">
+            </botao>
+        
+             <a [routerLink]="[menu]" class="btn btn-primary">Voltar</a>
+            <hr>
+        </div>
+    </form>
+</div>
+

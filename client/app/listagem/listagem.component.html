@@ -1,0 +1,36 @@
+<div class="container">
+
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <a [routerLink]="['/cadastro']" class="btn btn-primary">
+                            Novo Livro
+                        </a>
+                    </span>
+                    <input #textoProcurado (keyup)="0" class="form-control" placeholder="filtrar pelo título do livro">
+                </div>
+            </form>
+        </div> <!-- fim col-md-12 -->
+    </div> <!-- fim row -->
+    <br>
+
+    <div class="row">
+        <painel #painel *ngFor="let livro of livros | filtroPorTitulo: textoProcurado.value" 
+        titulo="{{livro.titulo | uppercase }}" class="col-md-2">
+            <livro isbn="{{livro.isbn}}" titulo="{{livro.titulo}}"></livro>
+            
+            <botao nome="Remover" estilo="btn-danger btn-block" (acao)="modal.show()" [confirmacao]="true"></botao>
+            <modal #modal frase="Tem certeza que deseja remover este livro?" (confirma)="remove(livro, painel)"></modal>
+
+            <a [routerLink]="['/cadastro', livro._id]">
+                 <botao nome="Editar" estilo="btn-primary btn-block">
+                 </botao>
+            </a>
+
+        </painel>
+    </div>
+</div>

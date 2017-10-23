@@ -1,0 +1,28 @@
+<div class="jumbotron">
+    <h1 class="text-center">ThinderBooks</h1>
+</div>
+
+<div class="container">
+
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="input-group">
+                    <input #textoProcurado (keyup)="0" class="form-control" placeholder="filtrar pelo título do livro">
+                </div>
+            </form>
+        </div> <!-- fim col-md-12 -->
+    </div> <!-- fim row -->
+    <br>
+
+    <div class="row">
+        <painel #painel *ngFor="let livro of livros | filtroPorTitulo: textoProcurado.value" 
+        titulo="{{livro.titulo | uppercase }}" class="col-md-2">
+            <livro isbn="{{livro.isbn}}" titulo="{{livro.titulo}}"></livro>
+                <botao nome="Gostei!" estilo="btn-primary">
+                </botao>
+        </painel>
+    </div>
+</div>

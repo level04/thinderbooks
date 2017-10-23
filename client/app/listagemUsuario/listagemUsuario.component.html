@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let usuario of usuarios">
+       <usuario nome="{{usuario.nome}}" sobrenome="{{usuario.sobrenome}}" email="{{usuario.email}}" dataNascimento="{{usuario.dataNascimento}}"></usuario>
+       
+       <a [routerLink]="['/cadastroUsuario', usuario._id]">
+        <botao class="ajuste-botao" nome="Editar conta" estilo="btn-primary">
+        </botao>
+    </a>
+    </div>
+    </div>
+</div>

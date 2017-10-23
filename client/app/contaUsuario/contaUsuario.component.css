@@ -1,0 +1,12 @@
+.efeito {
+    display: inline-block;
+    float: left;
+}
+
+.bloco{
+    display: inline-block;
+    width: 50%;
+    margin-left: 3em;
+    margin-top: 2em;
+    color: white;
+}
