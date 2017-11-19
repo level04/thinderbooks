@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Novo livro</h3>
+  </div>
+  <div class="panel-body">
+    <form #formularioDeNovoLivro="ngForm" (ngSubmit)="onEnviarNovoLivro(formularioDeNovoLivro.value)">
+      
+      <div class="form-group">
+        <label for="titulo">Título</label>
+        <input type="text" class="form-control" name="titulo" placeholder="Título do livro" ngModel>
+      </div>
+
+      <div class="form-group">
+        <label for="genero">Gênero</label>
+        <input type="text" class="form-control" name="genero" placeholder="Gênero do livro" ngModel>
+      </div>
+
+      <div class="form-group">
+        <label for="isbn">Título</label>
+        <input type="text" class="form-control" name="isbn" placeholder="ISBN do livro" ngModel>
+      </div>
+      
+      <button type="submit" class="btn btn-default">Cadastrar</button>
+      <button type="" class="btn btn-alert">Cancelar</button>
+    </form>    
+  </div>
+</div>
