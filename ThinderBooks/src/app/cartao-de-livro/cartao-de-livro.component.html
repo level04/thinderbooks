@@ -1,0 +1,18 @@
+<div class="col l3">
+  <div class="card small">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="https://www.clickgratis.com.br/fotos-imagens/gatinho/aHR0cHM6Ly93d3cuY2xpY2tncmF0aXMuY29tLmJyL2ZvdG9zLWltYWdlbnMvZ2F0aW5oby9hSFIwY0RvdkwzZDNkeTVqYjIxdlptRjZaWEl1YjNKbkwzZHdMV052Ym5SbGJuUXZkWEJzYjJGa2N5OHlNREV5THpBM0wyZGhkR2x1YUc4dGNHVnljMkV1YW5Cbi5qcGc=.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{ livro.titulo }}<i class="material-icons right">more</i></span>
+      <p class="truncate">{{ livro.resumo }}</p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{ livro.titulo }}<i class="material-icons right">close</i></span>
+      <p>Resumo: {{ livro.resumo }}</p>
+      <p>Gênero: {{ livro.genero }}</p>
+      <p>Escrito por: {{ livro.escrito_por }}</p>
+      <p>ISBN: {{ livro.isbn }}</p>
+    </div>
+  </div>
+</div>
