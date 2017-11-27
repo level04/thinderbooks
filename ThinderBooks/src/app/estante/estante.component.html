@@ -1,3 +1,5 @@
-<p>
-  estante works!
-</p>
+<div class="row">
+  <div *ngFor="let livro of livros">
+    <app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>
+  </div>
+</div>
