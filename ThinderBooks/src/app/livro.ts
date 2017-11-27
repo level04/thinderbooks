@@ -3,7 +3,6 @@ export interface Livro {
   titulo: string;
   resumo: string;
   escrito_por: string;
-  detalhes: string;
   genero: string;
   isbn: string;
   capa: string;
