@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Usuario} from '../usuario';
+import { LoginComponent} from '../login/login.component';
+import {$} from 'protractor';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  usuario: Usuario;
+  constructor(private usuarioLogado: LoginComponent) {
+    this.usuario = usuarioLogado.usuarioAtual;
+  }
 
   ngOnInit() {
   }
