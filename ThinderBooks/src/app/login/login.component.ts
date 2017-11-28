@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../usuario';
 import {USUARIOS} from '../../assets/dados/usuario.dados';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,18 +11,23 @@ import {USUARIOS} from '../../assets/dados/usuario.dados';
 export class LoginComponent implements OnInit {
 
   usuarios: Usuario[];
-
-  constructor() { }
+  usuarioAtual: Usuario = {
+    'nome': 'Otávio',
+    'sobrenome': 'Xavier Calaça',
+    'email': 'otavio@gmail.com',
+    'senha': '1234',
+    'foto': 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAtgAAAAJDA5MzE2MDg5LTYxOGUtNDMzMi1iZTJhLTQwYTcwZDM5NjJlOQ.jpg',
+    'livros': [
+      1, 4
+    ]
+  };
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.usuarios = USUARIOS;
   }
   login(e) {
     e.preventDefault();
-    console.log(e);
-    const usuario = e.target.elements[0];
-    const senha = e.target.elements[1];
-    console.log(usuario, senha);
-    return false;
+    this.router.navigate(['estante']);
   }
 }
