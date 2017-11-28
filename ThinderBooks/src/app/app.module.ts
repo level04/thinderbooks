@@ -7,18 +7,38 @@ import { CartaoDeLivroComponent } from './cartao-de-livro/cartao-de-livro.compon
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 
+import { RouterModule, Routes } from '@angular/router';
+import { MinhaEstanteComponent } from './minha-estante/minha-estante.component';
+
+const rotas = [
+  {
+    path: '',
+    component: LoginComponent
+  },
+  {
+    path: 'estante',
+    component: EstanteComponent
+  },
+  {
+    path: 'minhaestante',
+    component: MinhaEstanteComponent
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     EstanteComponent,
     CartaoDeLivroComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    MinhaEstanteComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(rotas),
   ],
-  providers: [],
+  providers: [ LoginComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
