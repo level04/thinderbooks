@@ -1,7 +1,6 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
@@ -13,32 +12,70 @@
       <div class="row">
         <div class="col l12">
           <div class="input-field">
-            <input id="filtroGlobal" type="search" (keyup)="filtroGlobal($event.target.value)">
+            <input class="filtro" id="filtroGlobal" type="search" (keyup)="filtroGlobal($event.target.value)">
             <label class="label-icon" for="filtroGlobal"><i class="material-icons">search</i></label>
           </div>
         </div>
       </div>
       <div class="row">
-        <div *ngFor="let livro of resultadosDaBuscaGlobal">
-          <app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>
+        <div *ngIf="todosOsLivros?.length > 0;else semLivros">
+          <div *ngFor="let livro of resultadosDaBuscaGlobal">
+            <app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>
+          </div>
         </div>
+
+        <ng-template #semLivros>
+          <div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-red-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+            </div>
+          </div>
+        </ng-template>
+
       </div>
     </div>
     <div id="test4" class="col s12">
       <div class="row">
         <div class="col l12">
           <div class="input-field">
-            <input id="filtro" type="search" (keyup)="filtroDoUsuario($event.target.value)">
+            <input class="filtro" id="filtro" type="search" (keyup)="filtroDoUsuario($event.target.value)">
             <label class="label-icon" for="filtro"><i class="material-icons">search</i></label>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div *ngFor="let livro of resultadosDaBuscaDoUsuario">
-          <app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>
-        </div>
-      </div>
+      <!--<div class="row">-->
+        <!--<div *ngFor="let livro of resultadosDaBuscaDoUsuario">-->
+          <!--<app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
   </div>
 </div>
+
+
+<!-- Modal Trigger -->
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large waves-effect waves-light btn modal-trigger red" href="#novoLivro">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+
+<!-- Modal Structure -->
+<div id="novoLivro" class="modal">
+  <div class="modal-content">
+    <h4>Cadastro de livro</h4>
+    <app-novo-livro></app-novo-livro>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+
+</div>
+
 

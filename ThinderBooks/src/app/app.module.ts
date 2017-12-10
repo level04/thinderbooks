@@ -10,6 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MinhaEstanteComponent } from './minha-estante/minha-estante.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import {environment} from '../environments/environment';
+
+import {DadosService} from './services/dados.service';
+import { NovoLivroComponent } from './novo-livro/novo-livro.component';
+import {FormsModule} from '@angular/forms';
+
 const rotas = [
   {
     path: '',
@@ -32,13 +40,20 @@ const rotas = [
     CartaoDeLivroComponent,
     NavbarComponent,
     LoginComponent,
-    MinhaEstanteComponent
+    MinhaEstanteComponent,
+    NovoLivroComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(rotas),
+    AngularFireModule.initializeApp(environment.firebase, 'thinderbooks'),
+    AngularFirestoreModule,
+    FormsModule
   ],
-  providers: [ LoginComponent ],
+  providers: [
+    LoginComponent,
+    DadosService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

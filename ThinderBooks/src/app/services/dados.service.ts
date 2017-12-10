@@ -8,9 +8,16 @@ import { Observable } from 'rxjs/Observable';
 export class DadosService {
 
   listaDeLivros: AngularFirestoreCollection<Livro>;
-  listaDeUsuarios: AngularFirestoreCollection<Usuario>;
-  livros: Observable<Livro[]>;
-  constructor(public angularFireStore: AngularFirestore) {
-    this.livros = this.angularFireStore.collection('livros').valueChanges();
+  livrosBaixados: Observable<Livro[]>;
+  constructor(public angularFirestore: AngularFirestore) {
+    this.listaDeLivros = this.angularFirestore.collection('livros');
+    this.livrosBaixados = this.listaDeLivros.valueChanges();
+  }
+  baixarLivros() {
+    return this.livrosBaixados;
+  }
+  adicionarLivro(novoLivro: Livro) {
+    this.listaDeLivros.add(novoLivro);
   }
 }
+

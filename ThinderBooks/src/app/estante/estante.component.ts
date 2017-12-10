@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Livro} from '../livro';
-import {LIVROS} from '../../assets/dados/livro.dados';
+// import {LIVROS} from '../../assets/dados/livro.dados';
 import {Usuario} from '../usuario';
 import {LoginComponent} from '../login/login.component';
+import {DadosService} from '../services/dados.service';
 
 @Component({
   selector: 'app-estante',
@@ -11,26 +12,22 @@ import {LoginComponent} from '../login/login.component';
 })
 
 export class EstanteComponent implements OnInit {
+
   todosOsLivros: Livro[];
-  livrosDoUsuario: Livro[];
+  usuario: Usuario;
   resultadosDaBuscaGlobal: Livro[];
   resultadosDaBuscaDoUsuario: Livro[];
-  usuario: Usuario;
-  constructor(private login: LoginComponent) {
+  livrosDoUsuario: Livro[];
+  constructor(private login: LoginComponent, private dadosDeLivros: DadosService) {
     this.usuario = login.usuarioAtual;
   }
   ngOnInit() {
-    this.livrosDoUsuario = [];
-    this.todosOsLivros = LIVROS;
-    this.resultadosDaBuscaGlobal = this.todosOsLivros;
-    this.usuario.livros.forEach(idDoLivro => {
-      this.livrosDoUsuario.push(this.obterLivroPeloId(idDoLivro));
+    this.dadosDeLivros.livrosBaixados.subscribe(livros => {
+      this.todosOsLivros = livros;
+      this.resultadosDaBuscaGlobal = this.todosOsLivros;
     });
-    this.resultadosDaBuscaDoUsuario = this.livrosDoUsuario;
-    console.log(this.todosOsLivros);
-    console.log(this.usuario.livros);
-    console.log(this.livrosDoUsuario);
   }
+
 
   filtroGlobal(termo: string) {
     termo = termo.toLowerCase();
