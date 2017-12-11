@@ -1,6 +1,17 @@
 <div *ngIf="livro != null;else semDados">
-  {{livro.titulo}}
+  <div class="row">
+    <div class="col l6 s12">
+      <img class="responsive-img" src="{{livro.capa}}" alt="">
+    </div>
 
+    <div class="col l6 s12">
+      <h2>{{livro.titulo}}</h2>
+      <p>Autor(a): <span>{{livro.escrito_por}}</span></p>
+      <p>Gênero: <span>{{livro.genero}}</span></p>
+      <p>ISBN: <span>{{livro.isbn}}</span></p>
+      <p>Resumo: <span>{{livro.resumo}}</span></p>
+    </div>
+  </div>
 </div>
 
 
