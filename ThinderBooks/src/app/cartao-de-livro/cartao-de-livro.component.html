@@ -1,19 +1,19 @@
-<div class="col l3">
-  <div class="card small hoverable">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="{{livro.capa}}">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{{ livro.titulo }}<i class="material-icons right">more</i></span>
-      <p class="truncate">{{ livro.resumo }}</p>
+<div class="col l3 s12 m12">
 
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{ livro.titulo }}<i class="material-icons right">close</i></span>
-      <p>Resumo: {{ livro.resumo }}</p>
-      <p>Gênero: {{ livro.genero }}</p>
-      <p>Escrito por: {{ livro.escrito_por }}</p>
-      <p>ISBN: {{ livro.isbn }}</p>
+  <div>
+    <div class="card small">
+      <div class="card-image">
+        <img src="{{livro.capa}}">
+      </div>
+      <div class="card-content">
+        <p>{{ livro.titulo }}</p>
+      </div>
+      <div class="card-action">
+        <a class="btn-floating btn waves-effect waves-light red"><i class="material-icons"></i></a>
+        <a class="btn-floating btn waves-effect waves-light red"><i class="material-icons">thumb_up</i></a>
+        <a class="btn-floating btn waves-effect waves-light red modal-trigger" href="#modalLivro"
+           (click)="visualizarLivro()"><i class="material-icons">remove_red_eye</i></a>
+      </div>
     </div>
   </div>
 </div>

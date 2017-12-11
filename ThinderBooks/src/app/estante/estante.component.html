@@ -8,6 +8,7 @@
         <li class="tab col s6"><a href="#test4">Minha Estante</a></li>
       </ul>
     </div>
+
     <div id="test1" class="col s12">
       <div class="row">
         <div class="col l12">
@@ -20,7 +21,7 @@
       <div class="row">
         <div *ngIf="todosOsLivros?.length > 0;else semLivros">
           <div *ngFor="let livro of resultadosDaBuscaGlobal">
-            <app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>
+            <app-cartao-de-livro [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"></app-cartao-de-livro>
           </div>
         </div>
 
@@ -40,6 +41,7 @@
 
       </div>
     </div>
+
     <div id="test4" class="col s12">
       <div class="row">
         <div class="col l12">
@@ -49,11 +51,11 @@
           </div>
         </div>
       </div>
-      <!--<div class="row">-->
-        <!--<div *ngFor="let livro of resultadosDaBuscaDoUsuario">-->
-          <!--<app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>-->
-        <!--</div>-->
-      <!--</div>-->
+      <div class="row">
+        <div *ngFor="let livro of resultadosDaBuscaDoUsuario">
+          <app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -79,3 +81,12 @@
 </div>
 
 
+<!-- Modal Structure -->
+<div id="modalLivro" class="modal">
+  <div class="modal-content">
+<app-detalhes-de-livro [livro]="livroSelecionado"></app-detalhes-de-livro>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>

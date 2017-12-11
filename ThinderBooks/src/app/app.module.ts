@@ -17,6 +17,7 @@ import {environment} from '../environments/environment';
 import {DadosService} from './services/dados.service';
 import { NovoLivroComponent } from './novo-livro/novo-livro.component';
 import {FormsModule} from '@angular/forms';
+import { DetalhesDeLivroComponent } from './detalhes-de-livro/detalhes-de-livro.component';
 
 const rotas = [
   {
@@ -41,7 +42,8 @@ const rotas = [
     NavbarComponent,
     LoginComponent,
     MinhaEstanteComponent,
-    NovoLivroComponent
+    NovoLivroComponent,
+    DetalhesDeLivroComponent
   ],
   imports: [
     BrowserModule,

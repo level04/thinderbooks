@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Livro} from '../livro';
 
 @Component({
@@ -9,19 +9,15 @@ import {Livro} from '../livro';
 export class CartaoDeLivroComponent implements OnInit {
 
   @Input('livro') livro: Livro;
-
-  // livro: Livro = {
-  //   'id': 2,
-  //   'titulo': 'Animais Fantásticos e Onde Habitam',
-  //   'resumo': 'Animais Fantásticos e Onde Habitam é um livro escrito por J. K. Rowling sob o pseudônimo de Newt Scamander.',
-  //   'escrito_por': 'J. K. Rowling',
-  //   'genero': 'Literatura fantástica',
-  //   'isbn': '972-23-2755-0',
-  //   'capa': 'animais-fantasticos.jpg'
-  // };
+  @Output() eventoVisualizarClicado = new EventEmitter<Livro>();
   constructor() {
   }
 
   ngOnInit() {
+  }
+  visualizarLivro() {
+    this.eventoVisualizarClicado.emit(this.livro);
+    console.log('Visualizar livro');
+    console.log(JSON.stringify(this.livro));
   }
 }

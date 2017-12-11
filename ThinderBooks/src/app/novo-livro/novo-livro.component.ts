@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DadosService} from '../services/dados.service';
 import {Livro} from '../livro';
+import {LoginComponent} from "../login/login.component";
 
 @Component({
   selector: 'app-novo-livro',
@@ -16,11 +17,12 @@ export class NovoLivroComponent implements OnInit {
     isbn: '',
     capa: ''
   };
-  constructor(private livroService: DadosService) { }
+  constructor(private livroService: DadosService, private usuario: LoginComponent) { }
 
   ngOnInit() {
   }
   onSubmit() {
       this.livroService.adicionarLivro(this.novoLivro);
+      this.usuario.addLivro(this.novoLivro);
   }
 }

@@ -18,16 +18,23 @@ export class EstanteComponent implements OnInit {
   resultadosDaBuscaGlobal: Livro[];
   resultadosDaBuscaDoUsuario: Livro[];
   livrosDoUsuario: Livro[];
+  livroSelecionado: Livro;
   constructor(private login: LoginComponent, private dadosDeLivros: DadosService) {
     this.usuario = login.usuarioAtual;
+    this.livrosDoUsuario = [];
   }
   ngOnInit() {
     this.dadosDeLivros.livrosBaixados.subscribe(livros => {
       this.todosOsLivros = livros;
       this.resultadosDaBuscaGlobal = this.todosOsLivros;
+
+      this.livrosDoUsuario = [];
+      this.usuario.livros.forEach(isbnDoLivro => {
+        this.livrosDoUsuario.push(this.obterLivroPeloIsbn(isbnDoLivro));
+      });
+      this.resultadosDaBuscaDoUsuario = this.livrosDoUsuario;
     });
   }
-
 
   filtroGlobal(termo: string) {
     termo = termo.toLowerCase();
@@ -44,12 +51,17 @@ export class EstanteComponent implements OnInit {
       return livro.titulo.toLowerCase().includes(termo);
     });
   }
-  obterLivroPeloId(id: number): Livro {
+  obterLivroPeloIsbn(isbn: string): Livro {
     for (const livro of this.todosOsLivros) {
-      if (id === livro.id) {
+      if (isbn === livro.isbn) {
         return livro;
       }
     }
     return null;
+  }
+  livroModal(livro: Livro) {
+    this.livroSelecionado = livro;
+    console.log('Edionay');
+    console.log(JSON.stringify(livro));
   }
 }

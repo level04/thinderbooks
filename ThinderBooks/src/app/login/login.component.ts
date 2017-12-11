@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../usuario';
 import {USUARIOS} from '../../assets/dados/usuario.dados';
 import {Router} from '@angular/router';
+import {Livro} from '../livro';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
     'senha': '1234',
     'foto': 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAtgAAAAJDA5MzE2MDg5LTYxOGUtNDMzMi1iZTJhLTQwYTcwZDM5NjJlOQ.jpg',
     'livros': [
-      1, 4
+      '972-23-2755-0'
     ]
   };
   constructor(private router: Router) { }
@@ -29,5 +30,8 @@ export class LoginComponent implements OnInit {
   login(e) {
     e.preventDefault();
     this.router.navigate(['estante']);
+  }
+  addLivro(livro: Livro) {
+    this.usuarioAtual.livros.push(livro.isbn);
   }
 }
