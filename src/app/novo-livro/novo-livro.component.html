@@ -1,0 +1,42 @@
+<div class="row">
+  <form (ngSubmit)="onSubmit()" class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="titulo" type="text" class="validate" [(ngModel)]="novoLivro.titulo" name="titulo">
+        <label for="titulo">Título</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="autor" type="text" class="validate" [(ngModel)]="novoLivro.escrito_por" name="escrito_por">
+        <label for="autor">Autor(a)</label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+          <input id="genero" type="text" class="validate" [(ngModel)]="novoLivro.genero" name="genero">
+          <label for="genero">Gênero</label>
+        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="isbn" type="text" class="validate" [(ngModel)]="novoLivro.isbn" name="isbn">
+        <label for="isbn">ISBN</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="capa" type="text" class="validate" [(ngModel)]="novoLivro.capa" name="capa">
+        <label for="capa">Link para a capa</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="resumo" type="text" class="validate" [(ngModel)]="novoLivro.resumo" name="resumo">
+        <label for="resumo">Resumo</label>
+      </div>
+    </div>
+    <input type="submit" value="Cadastrar" class="btn modal-close">
+    <a class="btn modal-close red">Cancelar</a>
+  </form>
+</div>
