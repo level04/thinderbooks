@@ -10,7 +10,6 @@ export class CartaoDeLivroComponent implements OnInit {
 
   @Input('livro') livro: Livro;
   @Output() eventoVisualizarClicado = new EventEmitter<Livro>();
-  @Output() eventoApagarClicado = new EventEmitter<Livro>();
   constructor() {
   }
 
@@ -18,9 +17,5 @@ export class CartaoDeLivroComponent implements OnInit {
   }
   visualizarLivro() {
     this.eventoVisualizarClicado.emit(this.livro);
-  }
-  apagarLivro() {
-    console.log('apagarLivro');
-    this.eventoApagarClicado.emit(this.livro);
   }
 }

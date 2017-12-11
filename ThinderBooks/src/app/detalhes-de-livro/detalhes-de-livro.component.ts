@@ -16,6 +16,4 @@ export class DetalhesDeLivroComponent implements OnInit {
   ngOnInit() {
   }
 
-  livroModal(isbn: string) {
-  }
 }

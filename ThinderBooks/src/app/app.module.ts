@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { MinhaEstanteComponent } from './minha-estante/minha-estante.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
@@ -18,6 +17,7 @@ import {DadosService} from './services/dados.service';
 import { NovoLivroComponent } from './novo-livro/novo-livro.component';
 import {FormsModule} from '@angular/forms';
 import { DetalhesDeLivroComponent } from './detalhes-de-livro/detalhes-de-livro.component';
+import { CartaoDeLivroUsuarioComponent } from './cartao-de-livro-usuario/cartao-de-livro-usuario.component';
 
 const rotas = [
   {
@@ -27,10 +27,6 @@ const rotas = [
   {
     path: 'estante',
     component: EstanteComponent
-  },
-  {
-    path: 'minhaestante',
-    component: MinhaEstanteComponent
   }
 ];
 
@@ -41,16 +37,17 @@ const rotas = [
     CartaoDeLivroComponent,
     NavbarComponent,
     LoginComponent,
-    MinhaEstanteComponent,
     NovoLivroComponent,
-    DetalhesDeLivroComponent
+    DetalhesDeLivroComponent,
+    CartaoDeLivroUsuarioComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(rotas),
     AngularFireModule.initializeApp(environment.firebase, 'thinderbooks'),
     AngularFirestoreModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [
     LoginComponent,

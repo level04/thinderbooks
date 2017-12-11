@@ -55,15 +55,14 @@
 
         <div *ngIf="resultadosDaBuscaDoUsuario?.length > 0;else estanteVazia">
           <div *ngFor="let livro of resultadosDaBuscaDoUsuario">
-            <app-cartao-de-livro [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"
-                                 (eventoApagarClicado)="excluirLivro($event)"></app-cartao-de-livro>
+            <app-cartao-de-livro-usuario [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"
+                                 (eventoApagarClicado)="excluirLivro($event)"></app-cartao-de-livro-usuario>
           </div>
         </div>
       </div>
       <ng-template #estanteVazia>
 <span>Sem livros na sua estante.</span>
       </ng-template>
-
     </div>
   </div>
 </div>
@@ -91,6 +90,6 @@
 <app-detalhes-de-livro [livro]="livroSelecionado"></app-detalhes-de-livro>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
   </div>
 </div>
