@@ -3,6 +3,8 @@ import {Usuario} from '../usuario';
 import {USUARIOS} from '../../assets/dados/usuario.dados';
 import {Router} from '@angular/router';
 import {Livro} from '../livro';
+import {DadosService} from '../services/dados.service';
+import {AngularFirestoreCollection} from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,8 @@ import {Livro} from '../livro';
 })
 export class LoginComponent implements OnInit {
 
-  usuarios: Usuario[];
+  usuarios: AngularFirestoreCollection<Usuario>;
+  dadosLogin;
   usuarioAtual: Usuario = {
     'nome': 'Otávio',
     'sobrenome': 'Xavier Calaça',
@@ -19,16 +22,15 @@ export class LoginComponent implements OnInit {
     'senha': '1234',
     'foto': 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAtgAAAAJDA5MzE2MDg5LTYxOGUtNDMzMi1iZTJhLTQwYTcwZDM5NjJlOQ.jpg',
     'livros': [
-      '972-23-2755-0'
     ]
   };
-  constructor(private router: Router) { }
+  constructor(private router: Router, private usuariosServico: DadosService) { }
 
   ngOnInit() {
-    this.usuarios = USUARIOS;
+    this.usuarios = this.usuariosServico.usuarios;
   }
   login(e) {
-    e.preventDefault();
+    console.log('cliuei');
     this.router.navigate(['estante']);
   }
   addLivro(livro: Livro) {

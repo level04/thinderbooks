@@ -1,5 +1,5 @@
 export interface Livro {
-  id?: number;
+  id?: string;
   titulo: string;
   resumo: string;
   escrito_por: string;

@@ -1,17 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Livro} from '../livro';
-// import {LIVROS} from '../../assets/dados/livro.dados';
 import {Usuario} from '../usuario';
 import {LoginComponent} from '../login/login.component';
 import {DadosService} from '../services/dados.service';
-
 @Component({
   selector: 'app-estante',
   templateUrl: './estante.component.html',
   styleUrls: ['./estante.component.css']
 })
 
-export class EstanteComponent implements OnInit {
+export class EstanteComponent implements OnInit, AfterViewInit {
 
   todosOsLivros: Livro[];
   usuario: Usuario;
@@ -34,6 +32,11 @@ export class EstanteComponent implements OnInit {
       });
       this.resultadosDaBuscaDoUsuario = this.livrosDoUsuario;
     });
+  }
+  ngAfterViewInit() {
+    // $('.modal').modal();
+    // $('ul.tabs').tabs();
+    // $('.dropdown-button').dropdown();
   }
 
   filtroGlobal(termo: string) {
@@ -61,7 +64,8 @@ export class EstanteComponent implements OnInit {
   }
   livroModal(livro: Livro) {
     this.livroSelecionado = livro;
-    console.log('Edionay');
-    console.log(JSON.stringify(livro));
+  }
+  excluirLivro(livro: Livro) {
+    this.dadosDeLivros.excluirLivro(livro);
   }
 }

@@ -17,13 +17,6 @@
             <label class="label-icon" for="filtroGlobal"><i class="material-icons">search</i></label>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div *ngIf="todosOsLivros?.length > 0;else semLivros">
-          <div *ngFor="let livro of resultadosDaBuscaGlobal">
-            <app-cartao-de-livro [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"></app-cartao-de-livro>
-          </div>
-        </div>
 
         <ng-template #semLivros>
           <div class="preloader-wrapper active">
@@ -40,6 +33,13 @@
         </ng-template>
 
       </div>
+      <div class="row">
+        <div *ngIf="todosOsLivros?.length > 0;else semLivros">
+          <div *ngFor="let livro of resultadosDaBuscaGlobal">
+            <app-cartao-de-livro [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"></app-cartao-de-livro>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="test4" class="col s12">
@@ -52,10 +52,18 @@
         </div>
       </div>
       <div class="row">
-        <div *ngFor="let livro of resultadosDaBuscaDoUsuario">
-          <app-cartao-de-livro [livro]="livro"></app-cartao-de-livro>
+
+        <div *ngIf="resultadosDaBuscaDoUsuario?.length > 0;else estanteVazia">
+          <div *ngFor="let livro of resultadosDaBuscaDoUsuario">
+            <app-cartao-de-livro [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"
+                                 (eventoApagarClicado)="excluirLivro($event)"></app-cartao-de-livro>
+          </div>
         </div>
       </div>
+      <ng-template #estanteVazia>
+<span>Sem livros na sua estante.</span>
+      </ng-template>
+
     </div>
   </div>
 </div>
