@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Livro} from '../livro';
 import {DadosService} from '../services/dados.service';
+import { ModalService } from '../services/modal.service';
 
 @Component({
   selector: 'app-detalhes-de-livro',
@@ -9,11 +10,19 @@ import {DadosService} from '../services/dados.service';
 })
 export class DetalhesDeLivroComponent implements OnInit {
 
-  @Input('livro') livro: Livro;
-  constructor() {
+  livro: Livro;
+  constructor(modalService: ModalService) {
+    modalService.notifyObservable.subscribe(livro => {
+      this.livro = livro
+      console.log(livro)
+    })
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(){
+    console.warn('Livro: ', this.livro);
   }
 
 }

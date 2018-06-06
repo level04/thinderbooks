@@ -1,4 +1,4 @@
-<div *ngIf="livro != null;else semDados">
+<div *ngIf="livro != undefined">
   <div class="row">
     <div class="col l6 s12">
       <img class="responsive-img" src="{{livro.capa}}" alt="">
@@ -15,7 +15,7 @@
 </div>
 
 
-<ng-template #semDados>
+<!-- <ng-template #semDados>
   <div class="preloader-wrapper active">
     <div class="spinner-layer spinner-red-only">
       <div class="circle-clipper left">
@@ -27,4 +27,4 @@
     </div>
     </div>
   </div>
-</ng-template>
+</ng-template> -->

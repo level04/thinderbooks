@@ -85,9 +85,9 @@
 
 
 <!-- Modal Structure -->
-<div id="modalLivro" class="modal">
+<div id="modalLivro" class="modal" *ngIf="livroSelecionado">
   <div class="modal-content">
-<app-detalhes-de-livro [livro]="livroSelecionado"></app-detalhes-de-livro>
+    <app-detalhes-de-livro></app-detalhes-de-livro>
   </div>
   <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>

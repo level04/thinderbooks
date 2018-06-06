@@ -1,8 +1,11 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Livro} from '../livro';
-import {Usuario} from '../usuario';
-import {LoginComponent} from '../login/login.component';
-import {DadosService} from '../services/dados.service';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Livro } from '../livro';
+import { Usuario } from '../usuario';
+import { LoginComponent } from '../login/login.component';
+import { DadosService } from '../services/dados.service';
+import { DetalhesDeLivroComponent } from '../detalhes-de-livro/detalhes-de-livro.component';
+import { ModalService } from '../services/modal.service';
+
 @Component({
   selector: 'app-estante',
   templateUrl: './estante.component.html',
@@ -16,14 +19,15 @@ export class EstanteComponent implements OnInit, AfterViewInit {
   resultadosDaBuscaGlobal: Livro[];
   resultadosDaBuscaDoUsuario: Livro[];
   livrosDoUsuario: Livro[];
-  livroSelecionado: Livro;
-  constructor(private login: LoginComponent, private dadosDeLivros: DadosService) {
+  livroSelecionado: boolean = false;
+  constructor(private login: LoginComponent, private dadosDeLivros: DadosService, private modalService: ModalService) {
     this.usuario = login.usuarioAtual;
     this.livrosDoUsuario = [];
   }
   ngOnInit() {
     this.dadosDeLivros.livrosBaixados.subscribe(livros => {
       this.todosOsLivros = livros;
+      console.log(this.todosOsLivros)
       this.resultadosDaBuscaGlobal = this.todosOsLivros;
 
       this.livrosDoUsuario = [];
@@ -62,9 +66,12 @@ export class EstanteComponent implements OnInit, AfterViewInit {
     }
     return null;
   }
+
   livroModal(livro: Livro) {
-    this.livroSelecionado = livro;
+    this.modalService.emit(livro);
+    this.livroSelecionado = true;
   }
+  
   excluirLivro(livro: Livro) {
     this.dadosDeLivros.excluirLivro(livro);
   }
