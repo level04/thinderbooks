@@ -10,14 +10,12 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { environment } from '../environments/environment';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import {environment} from '../environments/environment';
 
-import { Subject } from 'rxjs/Subject';
-import { DadosService } from './services/dados.service';
-import { ModalService } from './services/modal.service'
+import {DadosService} from './services/dados.service';
 import { NovoLivroComponent } from './novo-livro/novo-livro.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import { DetalhesDeLivroComponent } from './detalhes-de-livro/detalhes-de-livro.component';
 import { CartaoDeLivroUsuarioComponent } from './cartao-de-livro-usuario/cartao-de-livro-usuario.component';
 
@@ -54,8 +52,6 @@ const rotas = [
   providers: [
     LoginComponent,
     DadosService,
-    ModalService,
-    Subject,
   ],
   bootstrap: [AppComponent]
 })

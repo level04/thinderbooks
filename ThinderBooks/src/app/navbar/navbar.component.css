@@ -1,3 +1,7 @@
 nav {
-  background-color: darkred;
+  background-color: #9C27B0;
+}
+
+.brand-logo {
+  font-family: 'Courier New', Courier, monospace;
 }

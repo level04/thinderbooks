@@ -1,3 +1,29 @@
 .filtro {
-  text-align: center;
+    padding-left: 55px !important;
+    background: #9C27B00D !important;
+}
+
+.filtro:focus {
+    background: #f6f6f6 !important;
+}
+
+.input-field input[class=filtro]:focus {
+    border-bottom: 1px solid #9C27B0 !important;
+    box-shadow: 0 1px 0 0 #9C27B0 !important;
+}
+
+.tabs .indicator {
+    background-color: #9C27B0 !important;
+}
+
+.tabs .tab a.active {
+    color: #9C27B0 !important;
+}
+
+.tabs .tab a:hover {
+    color: #9C27B0 !important;
+}
+
+.tabs .tab a {
+    color: #9C27B0 !important;
 }

@@ -1,21 +1,36 @@
-<div *ngIf="livro != undefined">
+<div *ngIf="livro != null;else semDados" class="col l6">
   <div class="row">
-    <div class="col l6 s12">
-      <img class="responsive-img" src="{{livro.capa}}" alt="">
+    <div class="col l4 s12 capa-holder">
+      <div class="responsive-img capa" [style.background]="sanitize(livro.capa)" (mouseover)="toastSemCapa()"></div>
     </div>
 
-    <div class="col l6 s12">
-      <h2>{{livro.titulo}}</h2>
-      <p>Autor(a): <span>{{livro.escrito_por}}</span></p>
-      <p>Gênero: <span>{{livro.genero}}</span></p>
-      <p>ISBN: <span>{{livro.isbn}}</span></p>
-      <p>Resumo: <span>{{livro.resumo}}</span></p>
+    <div class="col l8 s12">
+      <div class="row">
+        <div class="col l10">
+          <b><h6 style="color:#9C27B0">{{livro.titulo.toUpperCase()}}</h6></b>
+        </div>
+        <div class="col l2">
+          <a class="btn-floating btn waves-effect waves-light purple" (click)="toastEmConstrucao()"><i class="material-icons">bookmark_border</i></a>
+        </div>
+      </div>
+      <div class="row">
+        <ul class="col l12">
+          <li>Autor(a): <span>{{livro.escrito_por}}</span></li>
+          <li>Gênero: <span>{{livro.genero}}</span></li>
+          <li>ISBN: <span>{{livro.isbn}}</span></li>
+          <li>
+            Resumo: 
+            <span>{{resumo}}</span>
+            <span *ngIf="canVerMais" class="new badge orange" data-badge-caption="detalhes" (click)="verMais()">{{ verMaisText }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
 
-<!-- <ng-template #semDados>
+<ng-template #semDados>
   <div class="preloader-wrapper active">
     <div class="spinner-layer spinner-red-only">
       <div class="circle-clipper left">
@@ -27,4 +42,4 @@
     </div>
     </div>
   </div>
-</ng-template> -->
+</ng-template>

@@ -4,16 +4,17 @@
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s6"><a href="#test1">Estante Global</a></li>
-        <li class="tab col s6"><a href="#test4">Minha Estante</a></li>
+        <li class="tab col s6"><a href="#test1" >Estante Global</a></li>
+        <li class="tab col s6"><a href="#test4" >Minha Estante</a></li>
+        <div class="indicator purple" style="z-index:1"></div>
       </ul>
     </div>
 
     <div id="test1" class="col s12">
       <div class="row">
-        <div class="col l12">
+        <div class="col l3 s12 offset-l9">
           <div class="input-field">
-            <input class="filtro" id="filtroGlobal" type="search" (keyup)="filtroGlobal($event.target.value)">
+            <input placeholder="Pesquisar" class="filtro" id="filtroGlobal" type="search" (keyup)="filtroGlobal($event.target.value)">
             <label class="label-icon" for="filtroGlobal"><i class="material-icons">search</i></label>
           </div>
         </div>
@@ -36,7 +37,7 @@
       <div class="row">
         <div *ngIf="todosOsLivros?.length > 0;else semLivros">
           <div *ngFor="let livro of resultadosDaBuscaGlobal">
-            <app-cartao-de-livro [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"></app-cartao-de-livro>
+            <app-detalhes-de-livro [livro]="livro"></app-detalhes-de-livro>
           </div>
         </div>
       </div>
@@ -44,10 +45,10 @@
 
     <div id="test4" class="col s12">
       <div class="row">
-        <div class="col l12">
+        <div class="col l3 offset-l9 s12">
           <div class="input-field">
-            <input class="filtro" id="filtro" type="search" (keyup)="filtroDoUsuario($event.target.value)">
-            <label class="label-icon" for="filtro"><i class="material-icons">search</i></label>
+            <input placeholder="Pesquisar" class="filtro" id="filtroGlobal" type="search" (keyup)="filtroGlobal($event.target.value)">
+            <label class="label-icon" for="filtroGlobal"><i class="material-icons">search</i></label>
           </div>
         </div>
       </div>
@@ -55,8 +56,7 @@
 
         <div *ngIf="resultadosDaBuscaDoUsuario?.length > 0;else estanteVazia">
           <div *ngFor="let livro of resultadosDaBuscaDoUsuario">
-            <app-cartao-de-livro-usuario [livro]="livro" (eventoVisualizarClicado)="livroModal($event)"
-                                 (eventoApagarClicado)="excluirLivro($event)"></app-cartao-de-livro-usuario>
+            <app-detalhes-de-livro [livro]="livro"></app-detalhes-de-livro>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
 
 <!-- Modal Trigger -->
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large waves-effect waves-light btn modal-trigger red" href="#novoLivro">
+  <a class="btn-floating btn-large waves-effect waves-light btn modal-trigger purple" href="#novoLivro">
     <i class="large material-icons">add</i>
   </a>
 </div>
@@ -84,12 +84,12 @@
 </div>
 
 
-<!-- Modal Structure -->
-<div id="modalLivro" class="modal" *ngIf="livroSelecionado">
+<!-- Modal Structure
+<div id="modalLivro" class="modal">
   <div class="modal-content">
-    <app-detalhes-de-livro></app-detalhes-de-livro>
+<app-detalhes-de-livro [livro]="livroSelecionado"></app-detalhes-de-livro>
   </div>
   <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
   </div>
-</div>
+</div> -->
