@@ -42,10 +42,14 @@
       <div class="row">
 
         <div>
-          <div *ngFor="let livro of books">
+          <div *ngFor="let livro of books" class="col s12">
+            <div class="row">
             <app-detalhes-de-livro [livro]="livro"></app-detalhes-de-livro>
-            <button (click)="editarLivro(livro)">Editar</button>
-            <button (click)="removerLivro(livro)">Remover</button>
+            </div>
+            <div class="row">
+              <button (click)="editarLivro(livro)">Editar</button>
+              <button (click)="removerLivro(livro)">Remover</button>
+            </div>
           </div>
         </div>
       </div>
