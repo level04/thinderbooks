@@ -22,7 +22,9 @@ export class NovoLivroComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-      this.livroService.adicionarLivro(this.novoLivro);
-      this.usuario.addLivro(this.novoLivro);
+      this.livroService.adicionarLivro(this.novoLivro).subscribe(livro => {
+        debugger;
+        let livroSalvo = livro;
+      })
   }
 }

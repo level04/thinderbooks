@@ -19,27 +19,14 @@
           </div>
         </div>
 
-        <ng-template #semLivros>
-          <div class="preloader-wrapper active">
-            <div class="spinner-layer spinner-red-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-            </div>
-          </div>
-        </ng-template>
-
+        
       </div>
       <div class="row">
-        <div *ngIf="todosOsLivros?.length > 0;else semLivros">
-          <div *ngFor="let livro of resultadosDaBuscaGlobal">
+  
+          <div *ngFor="let livro of books">
             <app-detalhes-de-livro [livro]="livro"></app-detalhes-de-livro>
           </div>
-        </div>
+        
       </div>
     </div>
 
@@ -54,14 +41,16 @@
       </div>
       <div class="row">
 
-        <div *ngIf="resultadosDaBuscaDoUsuario?.length > 0;else estanteVazia">
-          <div *ngFor="let livro of resultadosDaBuscaDoUsuario">
+        <div>
+          <div *ngFor="let livro of books">
             <app-detalhes-de-livro [livro]="livro"></app-detalhes-de-livro>
+            <button (click)="editarLivro(livro)">Editar</button>
+            <button (click)="removerLivro(livro)">Remover</button>
           </div>
         </div>
       </div>
       <ng-template #estanteVazia>
-<span>Sem livros na sua estante.</span>
+        <span>Sem livros na sua estante.</span>
       </ng-template>
     </div>
   </div>

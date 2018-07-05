@@ -11,7 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class DetalhesDeLivroComponent implements OnInit {
 
-  @Input('livro') livro: Livro;
+  @Input('livro') livro: any;
   private resumo: string;
   private isVerMais: boolean;
   private canVerMais: boolean;
@@ -44,15 +44,7 @@ export class DetalhesDeLivroComponent implements OnInit {
   }
 
   setCapa() {
-    let capaDefault = './../../../assets/images/default.png';
-    let len = this.livro.capa.length;
-    let format = this.livro.capa.substr(len - 3, len);
-    let acceptedFormats = [ 'png', 'jpg', 'svg' ];
-    this.livro.capa = acceptedFormats.find(
-      (element) => { return element == format }
-    ) != undefined ? this.livro.capa : capaDefault;
-
-    this.semCapa = this.livro.capa == capaDefault;
+    
   }
 
   verMais() {

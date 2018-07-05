@@ -12,12 +12,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import {environment} from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 import {DadosService} from './services/dados.service';
 import { NovoLivroComponent } from './novo-livro/novo-livro.component';
 import {FormsModule} from '@angular/forms';
 import { DetalhesDeLivroComponent } from './detalhes-de-livro/detalhes-de-livro.component';
 import { CartaoDeLivroUsuarioComponent } from './cartao-de-livro-usuario/cartao-de-livro-usuario.component';
+import { EditComponent } from './edit/edit.component';
 
 const rotas = [
   {
@@ -27,6 +29,10 @@ const rotas = [
   {
     path: 'estante',
     component: EstanteComponent
+  },
+  {
+    path: 'edit/:livro',
+    component: EditComponent
   }
 ];
 
@@ -39,7 +45,8 @@ const rotas = [
     LoginComponent,
     NovoLivroComponent,
     DetalhesDeLivroComponent,
-    CartaoDeLivroUsuarioComponent
+    CartaoDeLivroUsuarioComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,8 @@ const rotas = [
     AngularFireModule.initializeApp(environment.firebase, 'thinderbooks'),
     AngularFirestoreModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
   ],
   providers: [
     LoginComponent,

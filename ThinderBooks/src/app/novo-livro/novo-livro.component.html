@@ -2,19 +2,19 @@
   <form (ngSubmit)="onSubmit()" class="col s12">
     <div class="row">
       <div class="input-field col s12">
-        <input id="titulo" type="text" class="validate" [(ngModel)]="novoLivro.titulo" name="titulo">
+        <input id="titulo" type="text" class="validate" [(ngModel)]="novoLivro.titulo" name="titulo" required>
         <label for="titulo">Título</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="autor" type="text" class="validate" [(ngModel)]="novoLivro.escrito_por" name="escrito_por">
+        <input id="autor" type="text" class="validate" [(ngModel)]="novoLivro.escrito_por" name="escrito_por" required>
         <label for="autor">Autor(a)</label>
       </div>
     </div>
     <div class="row">
         <div class="input-field col s12">
-          <input id="genero" type="text" class="validate" [(ngModel)]="novoLivro.genero" name="genero">
+          <input id="genero" type="text" class="validate" [(ngModel)]="novoLivro.genero" name="genero" required>
           <label for="genero">Gênero</label>
         </div>
     </div>
@@ -32,7 +32,7 @@
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="resumo" type="text" class="validate" [(ngModel)]="novoLivro.resumo" name="resumo">
+        <input id="resumo" type="text" class="validate" [(ngModel)]="novoLivro.resumo" name="resumo" required>
         <label for="resumo">Resumo</label>
       </div>
     </div>

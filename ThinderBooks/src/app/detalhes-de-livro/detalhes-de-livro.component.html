@@ -7,7 +7,7 @@
     <div class="col l8 s12">
       <div class="row">
         <div class="col l10">
-          <b><h6 style="color:#9C27B0">{{livro.titulo.toUpperCase()}}</h6></b>
+          <b><h6 style="color:#9C27B0">{{livro.titulo}}</h6></b>
         </div>
         <div class="col l2">
           <a class="btn-floating btn waves-effect waves-light purple" (click)="toastEmConstrucao()"><i class="material-icons">bookmark_border</i></a>
@@ -17,7 +17,6 @@
         <ul class="col l12">
           <li>Autor(a): <span>{{livro.escrito_por}}</span></li>
           <li>Gênero: <span>{{livro.genero}}</span></li>
-          <li>ISBN: <span>{{livro.isbn}}</span></li>
           <li>
             Resumo: 
             <span>{{resumo}}</span>
